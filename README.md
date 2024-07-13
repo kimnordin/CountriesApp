@@ -37,3 +37,5 @@ I settled for an MVVM approach as I expected the App to be quite small, and I pe
 Should one want to expand the App with additional Views and Features I would have spent some additional time implementing a more rigorous architecture, like Redux or TCA, to make it more scalable. This would however had the trade-off of having to spent more time setting up all the States, Reducers, etc. before one could focus on the actual code assessment.
 
 Should this have been a fully-fledged App with a multitude of functionalities, my personal preference would have been to use my personal [ReduxUI](https://github.com/kimnordin/ReduxUI) Swift Package to implement the Redux architecture.
+
+It would also be a good idea to implement some written Tests to verify that the App performs as intended. If one would for example want to publish this project on the AppStore we could additionally include some test automation through Fastlane to validate our App before archiving it to the AppStore.
