@@ -12,9 +12,13 @@ struct CountriesListView: View {
     @State private var countries: [Country] = []
     
     var body: some View {
-        List {
-            ForEach(countries) { country in
-                CountryRowView(country: country)
+        NavigationView {
+            List {
+                ForEach(countries) { country in
+                    NavigationLink(destination: CountryDetailView(country: country)) {
+                        CountryRowView(country: country)
+                    }
+                }
             }
         }
         .onAppear {

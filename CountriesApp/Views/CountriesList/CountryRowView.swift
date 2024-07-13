@@ -11,10 +11,17 @@ struct CountryRowView: View {
     let country: Country
     
     var body: some View {
-        VStack {
-            AsyncImage(url: URL(string: country.flag.image))
+        HStack(spacing: 20) {
+            AsyncImage(url: URL(string: country.flag.image)) { result in
+                result.image?
+                    .resizable()
+                    .scaledToFit()
+            }
+            .frame(height: 100)
             Text(country.name.common)
+            Spacer()
         }
+        .padding()
     }
 }
 
