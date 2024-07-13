@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CountriesListView: View {
+    private let networkManager = NetworkManager()
     @State private var countries: [Country] = []
     
     var body: some View {
@@ -17,8 +18,19 @@ struct CountriesListView: View {
             }
         }
         .onAppear {
-            for testCountry in testCountriesData {
-                countries.append(testCountry)
+            Task {
+                do {
+                    countries = try await NetworkManager().fetchCountries()
+                } catch let error as NetworkError {
+                    switch error {
+                    case .invalidURL:
+                        print("Invalid URL")
+                    case .decodingError(let message):
+                        print("Decoding Error: ", message)
+                    }
+                } catch {
+                    print("An unexpected Error occurred: ", error)
+                }
             }
         }
     }
