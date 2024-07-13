@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CountriesListView: View {
     @StateObject private var countriesViewModel = CountriesViewModel()
+    @State private var searchInput: String = ""
     
     var body: some View {
         NavigationView {
@@ -35,14 +36,28 @@ struct CountriesListView: View {
                 }
             }
         }
+        .searchable(text: $searchInput)
         .onAppear {
             fetchAllCountries()
+        }
+        .onChange(of: searchInput) {
+            if $0.isEmpty {
+                fetchAllCountries()
+            } else {
+                searchCountries($0)
+            }
         }
     }
     
     private func fetchAllCountries() {
         Task {
             await countriesViewModel.fetchAllCountries()
+        }
+    }
+    
+    private func searchCountries(_ input: String) {
+        Task {
+            await countriesViewModel.searchCountries(input)
         }
     }
 }

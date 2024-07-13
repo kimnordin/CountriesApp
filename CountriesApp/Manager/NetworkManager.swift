@@ -34,6 +34,13 @@ struct NetworkManager {
         return try await fetchAndDecodeCountries(from: url)
     }
     
+    func searchCountries(_ input: String) async throws -> [Country] {
+        let searchCountriesUrl = "\(countriesBaseUrl)/name/\(input)?\(filteredFields)"
+        guard let url = URL(string: searchCountriesUrl) else { throw NetworkError.invalidURL }
+        
+        return try await fetchAndDecodeCountries(from: url)
+    }
+    
     private func fetchAndDecodeCountries(from url: URL) async throws -> [Country] {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
