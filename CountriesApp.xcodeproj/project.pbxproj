@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		F266448C2C429FEB00C02E70 /* CountriesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266448B2C429FEB00C02E70 /* CountriesAppApp.swift */; };
-		F266448E2C429FEB00C02E70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266448D2C429FEB00C02E70 /* ContentView.swift */; };
+		F266448E2C429FEB00C02E70 /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266448D2C429FEB00C02E70 /* CountriesListView.swift */; };
 		F26644902C429FEC00C02E70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F266448F2C429FEC00C02E70 /* Assets.xcassets */; };
 		F26644932C429FEC00C02E70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F26644922C429FEC00C02E70 /* Preview Assets.xcassets */; };
+		F266449C2C42A0B500C02E70 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266449B2C42A0B500C02E70 /* Country.swift */; };
+		F266449E2C42A26F00C02E70 /* CountryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266449D2C42A26F00C02E70 /* CountryRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F26644882C429FEB00C02E70 /* CountriesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F266448B2C429FEB00C02E70 /* CountriesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesAppApp.swift; sourceTree = "<group>"; };
-		F266448D2C429FEB00C02E70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F266448D2C429FEB00C02E70 /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
 		F266448F2C429FEC00C02E70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F26644922C429FEC00C02E70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F266449B2C42A0B500C02E70 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		F266449D2C42A26F00C02E70 /* CountryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,9 @@
 		F266448A2C429FEB00C02E70 /* CountriesApp */ = {
 			isa = PBXGroup;
 			children = (
+				F266449A2C42A0A200C02E70 /* Models */,
+				F26644992C42A09B00C02E70 /* Views */,
 				F266448B2C429FEB00C02E70 /* CountriesAppApp.swift */,
-				F266448D2C429FEB00C02E70 /* ContentView.swift */,
 				F266448F2C429FEC00C02E70 /* Assets.xcassets */,
 				F26644912C429FEC00C02E70 /* Preview Content */,
 			);
@@ -65,6 +70,23 @@
 				F26644922C429FEC00C02E70 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F26644992C42A09B00C02E70 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F266448D2C429FEB00C02E70 /* CountriesListView.swift */,
+				F266449D2C42A26F00C02E70 /* CountryRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F266449A2C42A0A200C02E70 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F266449B2C42A0B500C02E70 /* Country.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F266448E2C429FEB00C02E70 /* ContentView.swift in Sources */,
+				F266448E2C429FEB00C02E70 /* CountriesListView.swift in Sources */,
+				F266449C2C42A0B500C02E70 /* Country.swift in Sources */,
+				F266449E2C42A26F00C02E70 /* CountryRowView.swift in Sources */,
 				F266448C2C429FEB00C02E70 /* CountriesAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
