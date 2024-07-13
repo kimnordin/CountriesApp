@@ -8,34 +8,56 @@
 import SwiftUI
 
 struct CountriesListView: View {
-    private let networkManager = NetworkManager()
-    @State private var countries: [Country] = []
+    @StateObject private var countriesViewModel = CountriesViewModel()
+    @State private var searchInput: String = ""
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(countries) { country in
-                    NavigationLink(destination: CountryDetailView(country: country)) {
-                        CountryRowView(country: country)
+                if let networkError = countriesViewModel.networkError {
+                    VStack(alignment: .center, spacing: 8) {
+                        Text("⚠️")
+                            .font(.system(size: 40))
+                        Text("No Available Countries")
+                            .font(.system(size: 20))
+                        let errorMessage = "Underlying Error: \(networkError.errorMessage)"
+                        Text(errorMessage)
+                            .font(.system(size: 14))
+                            .frame(maxWidth: .infinity)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity)
+                } else {
+                    ForEach(countriesViewModel.countries) { country in
+                        NavigationLink(destination: CountryDetailView(country: country)) {
+                            CountryRowView(country: country)
+                        }
                     }
                 }
             }
         }
+        .searchable(text: $searchInput)
         .onAppear {
-            Task {
-                do {
-                    countries = try await NetworkManager().fetchCountries()
-                } catch let error as NetworkError {
-                    switch error {
-                    case .invalidURL:
-                        print("Invalid URL")
-                    case .decodingError(let message):
-                        print("Decoding Error: ", message)
-                    }
-                } catch {
-                    print("An unexpected Error occurred: ", error)
-                }
+            fetchAllCountries()
+        }
+        .onChange(of: searchInput) {
+            if $0.isEmpty {
+                fetchAllCountries()
+            } else {
+                searchCountries($0)
             }
+        }
+    }
+    
+    private func fetchAllCountries() {
+        Task {
+            await countriesViewModel.fetchAllCountries()
+        }
+    }
+    
+    private func searchCountries(_ input: String) {
+        Task {
+            await countriesViewModel.searchCountries(input)
         }
     }
 }

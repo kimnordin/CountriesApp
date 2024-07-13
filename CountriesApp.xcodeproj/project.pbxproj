@@ -18,6 +18,7 @@
 		F26644A52C42B18D00C02E70 /* CountryName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26644A42C42B18D00C02E70 /* CountryName.swift */; };
 		F26644AC2C42B5B900C02E70 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26644AB2C42B5B900C02E70 /* CountryDetailView.swift */; };
 		F26644AE2C42B87300C02E70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26644AD2C42B87300C02E70 /* Extensions.swift */; };
+		F26644B12C42C6CC00C02E70 /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26644B02C42C6CC00C02E70 /* CountriesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		F26644A42C42B18D00C02E70 /* CountryName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryName.swift; sourceTree = "<group>"; };
 		F26644AB2C42B5B900C02E70 /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
 		F26644AD2C42B87300C02E70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F26644B02C42C6CC00C02E70 /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				F266449F2C42A58200C02E70 /* Manager */,
 				F266449A2C42A0A200C02E70 /* Models */,
+				F26644AF2C42C6BA00C02E70 /* ViewModels */,
 				F26644992C42A09B00C02E70 /* Views */,
 				F266448B2C429FEB00C02E70 /* CountriesAppApp.swift */,
 				F26644AD2C42B87300C02E70 /* Extensions.swift */,
@@ -134,6 +137,14 @@
 				F26644AB2C42B5B900C02E70 /* CountryDetailView.swift */,
 			);
 			path = CountryDetail;
+			sourceTree = "<group>";
+		};
+		F26644AF2C42C6BA00C02E70 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F26644B02C42C6CC00C02E70 /* CountriesViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				F266448E2C429FEB00C02E70 /* CountriesListView.swift in Sources */,
 				F26644AE2C42B87300C02E70 /* Extensions.swift in Sources */,
 				F26644A32C42B18100C02E70 /* CountryFlag.swift in Sources */,
+				F26644B12C42C6CC00C02E70 /* CountriesViewModel.swift in Sources */,
 				F266449C2C42A0B500C02E70 /* Country.swift in Sources */,
 				F26644A12C42A5CA00C02E70 /* NetworkManager.swift in Sources */,
 				F26644AC2C42B5B900C02E70 /* CountryDetailView.swift in Sources */,
