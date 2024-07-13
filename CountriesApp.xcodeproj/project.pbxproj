@@ -13,6 +13,7 @@
 		F26644932C429FEC00C02E70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F26644922C429FEC00C02E70 /* Preview Assets.xcassets */; };
 		F266449C2C42A0B500C02E70 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266449B2C42A0B500C02E70 /* Country.swift */; };
 		F266449E2C42A26F00C02E70 /* CountryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266449D2C42A26F00C02E70 /* CountryRowView.swift */; };
+		F26644A12C42A5CA00C02E70 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26644A02C42A5CA00C02E70 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		F26644922C429FEC00C02E70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F266449B2C42A0B500C02E70 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		F266449D2C42A26F00C02E70 /* CountryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRowView.swift; sourceTree = "<group>"; };
+		F26644A02C42A5CA00C02E70 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		F266448A2C429FEB00C02E70 /* CountriesApp */ = {
 			isa = PBXGroup;
 			children = (
+				F266449F2C42A58200C02E70 /* Manager */,
 				F266449A2C42A0A200C02E70 /* Models */,
 				F26644992C42A09B00C02E70 /* Views */,
 				F266448B2C429FEB00C02E70 /* CountriesAppApp.swift */,
@@ -87,6 +90,14 @@
 				F266449B2C42A0B500C02E70 /* Country.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F266449F2C42A58200C02E70 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F26644A02C42A5CA00C02E70 /* NetworkManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 			files = (
 				F266448E2C429FEB00C02E70 /* CountriesListView.swift in Sources */,
 				F266449C2C42A0B500C02E70 /* Country.swift in Sources */,
+				F26644A12C42A5CA00C02E70 /* NetworkManager.swift in Sources */,
 				F266449E2C42A26F00C02E70 /* CountryRowView.swift in Sources */,
 				F266448C2C429FEB00C02E70 /* CountriesAppApp.swift in Sources */,
 			);
