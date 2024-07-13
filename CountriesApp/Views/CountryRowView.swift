@@ -12,8 +12,8 @@ struct CountryRowView: View {
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: country.flag))
-            Text(country.name)
+            AsyncImage(url: URL(string: country.flag.image))
+            Text(country.name.common)
         }
     }
 }
